@@ -28,6 +28,15 @@ public class GameManager : MonoBehaviour
     public Text multiplierText;
     public Text comboText;
 
+    private float totalNotes;
+    private float normalHits;
+    private float goodHits;
+    private float perfectHits;
+    private float missedHits;
+
+    public GameObject resultsScreen;
+    public Text percentHitText, normalText, goodText, perfectText, missText, rankText, finalScoreText;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -40,6 +49,7 @@ public class GameManager : MonoBehaviour
         multiplierText = GameObject.Find("MultiplierValueText").GetComponent<Text>();
         comboText = GameObject.Find("ComboValueText").GetComponent<Text>();
 
+        totalNotes = FindObjectsOfType<NoteObject>().Length;
     }
 
     // Update is called once per frame
@@ -53,6 +63,54 @@ public class GameManager : MonoBehaviour
                 noteScroller.hasStarted = true;
 
                 audioSource.Play();
+            }
+        }
+        else
+        {
+            if(!audioSource.isPlaying && !resultsScreen.activeInHierarchy)
+            {
+                resultsScreen.SetActive(true);
+
+                normalText.text = normalHits.ToString();
+                goodText.text = goodHits.ToString();
+                perfectText.text = perfectHits.ToString();
+                missText.text = missedHits.ToString();
+
+                float totalHit = normalHits + goodHits + perfectHits;
+                float percentHit = (totalHit / totalNotes) * 100f;
+
+                percentHitText.text = percentHit.ToString("F1") + "%";
+
+                string rankVal = "F";
+
+                if (percentHit > 95)
+                {
+                    rankVal = "S";
+                }
+                else if (percentHit > 85)
+                {
+                    rankVal = "A";
+                }
+                else if (percentHit > 70)
+                {
+                    rankVal = "B";
+                }
+                else if (percentHit > 55)
+                {
+                    rankVal = "C";
+                }
+                else if (percentHit > 40)
+                {
+                    rankVal = "D";
+                }
+                else
+                {
+                    rankVal = "F";
+                }
+
+                rankText.text = rankVal;
+
+                finalScoreText.text = currentScore.ToString();
             }
         }
     }
@@ -84,18 +142,21 @@ public class GameManager : MonoBehaviour
     {
         currentScore += scorePerNote * currentMultiplier;
         NoteHit();
+        normalHits++;
     }
 
     public void GoodHit()
     {
         currentScore += scorePerGoodNote * currentMultiplier;
         NoteHit();
+        goodHits++;
     }
 
     public void PerfectHit()
     {
         currentScore += scorePerPerfectNote * currentMultiplier;
         NoteHit();
+        perfectHits++;
     }
 
     public void NoteMissed()
@@ -108,5 +169,7 @@ public class GameManager : MonoBehaviour
 
         currentCombo = 0;
         comboText.text = currentCombo.ToString();
+
+        missedHits++;
     }
 }
