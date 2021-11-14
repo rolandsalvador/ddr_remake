@@ -8,6 +8,7 @@ public class GameManager : MonoBehaviour
     public AudioSource audioSource;
 
     public bool startPlaying;
+    public bool isPaused;
 
     public NoteScroller noteScroller;
 
@@ -35,7 +36,10 @@ public class GameManager : MonoBehaviour
     private float missedHits;
 
     public GameObject resultsScreen;
+    public GameObject pauseScreen;
     public Text percentHitText, normalText, goodText, perfectText, missText, rankText, finalScoreText;
+
+    public KeyCode keyToPress;
 
     // Start is called before the first frame update
     void Start()
@@ -67,7 +71,7 @@ public class GameManager : MonoBehaviour
         }
         else
         {
-            if(!audioSource.isPlaying && !resultsScreen.activeInHierarchy)
+            if(!audioSource.isPlaying && !resultsScreen.activeInHierarchy && !isPaused)
             {
                 resultsScreen.SetActive(true);
 
@@ -112,6 +116,14 @@ public class GameManager : MonoBehaviour
 
                 finalScoreText.text = currentScore.ToString();
             }
+        }
+
+        if (Input.GetKeyDown(keyToPress))
+        {
+            isPaused = true;
+            Time.timeScale = 0f;
+            audioSource.Pause();
+            pauseScreen.SetActive(true);
         }
     }
 
