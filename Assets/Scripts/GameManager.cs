@@ -8,7 +8,7 @@ public class GameManager : MonoBehaviour
     public AudioSource audioSource;
 
     public bool startPlaying;
-    public bool isPaused;
+    public bool isPaused = false;
 
     public NoteScroller noteScroller;
 
@@ -118,7 +118,7 @@ public class GameManager : MonoBehaviour
             }
         }
 
-        if (Input.GetKeyDown(keyToPress))
+        if (Input.GetKeyDown(keyToPress) && !isPaused)
         {
             isPaused = true;
             Time.timeScale = 0f;
@@ -129,7 +129,6 @@ public class GameManager : MonoBehaviour
 
     public void NoteHit()
     {
-        //Debug.Log("Note hit on time.");
 
         if (currentMultiplier - 1 < multiplierThresholds.Length)
         {
@@ -142,7 +141,6 @@ public class GameManager : MonoBehaviour
             }
         }
 
-        //currentScore += scorePerNote * currentMultiplier;
         scoreText.text = currentScore.ToString();
         multiplierText.text = currentMultiplier.ToString();
 
@@ -183,5 +181,13 @@ public class GameManager : MonoBehaviour
         comboText.text = currentCombo.ToString();
 
         missedHits++;
+    }
+
+    public void ResumeGame()
+    {
+        Time.timeScale = 1.0f;
+        audioSource.Play();
+        pauseScreen.SetActive(false);
+        isPaused = false;
     }
 }
