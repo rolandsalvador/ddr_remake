@@ -12,15 +12,13 @@ public class NoteScroller : MonoBehaviour
     void Start()
     {
         noteTempo = noteTempo / 60f;
+        transform.position += new Vector3(0f, noteTempo * Time.deltaTime, 0f);
     }
 
     // Update is called once per frame
     void Update()
     {
-        if(!hasStarted)
-        {
-        }
-        else
+        if (hasStarted == true)
         {
             transform.position += new Vector3(0f, noteTempo * Time.deltaTime, 0f);
         }

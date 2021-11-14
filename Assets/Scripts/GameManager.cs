@@ -7,7 +7,6 @@ public class GameManager : MonoBehaviour
 {
     public AudioSource audioSource;
 
-    public bool startPlaying;
     public bool isPaused = false;
 
     public NoteScroller noteScroller;
@@ -46,7 +45,6 @@ public class GameManager : MonoBehaviour
     {
         instance = this;
 
-        startPlaying = true;
         noteScroller.hasStarted = true;
 
         audioSource.Play();
@@ -64,7 +62,7 @@ public class GameManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(!audioSource.isPlaying && !resultsScreen.activeInHierarchy && !isPaused)
+        if (!audioSource.isPlaying && !resultsScreen.activeInHierarchy && !isPaused)
         {
             resultsScreen.SetActive(true);
 
