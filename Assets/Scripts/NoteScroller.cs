@@ -19,10 +19,6 @@ public class NoteScroller : MonoBehaviour
     {
         if(!hasStarted)
         {
-            /*if(Input.anyKeyDown)
-            {
-                hasStarted = true;
-            }*/
         }
         else
         {

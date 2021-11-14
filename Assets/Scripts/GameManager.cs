@@ -46,6 +46,11 @@ public class GameManager : MonoBehaviour
     {
         instance = this;
 
+        startPlaying = true;
+        noteScroller.hasStarted = true;
+
+        audioSource.Play();
+
         currentMultiplier = 1;
         currentCombo = 0;
 
@@ -59,63 +64,50 @@ public class GameManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(!startPlaying)
+        if(!audioSource.isPlaying && !resultsScreen.activeInHierarchy && !isPaused)
         {
-            if(Input.anyKeyDown)
+            resultsScreen.SetActive(true);
+
+            normalText.text = normalHits.ToString();
+            goodText.text = goodHits.ToString();
+            perfectText.text = perfectHits.ToString();
+            missText.text = missedHits.ToString();
+
+            float totalHit = normalHits + goodHits + perfectHits;
+            float percentHit = (totalHit / totalNotes) * 100f;
+
+            percentHitText.text = percentHit.ToString("F1") + "%";
+
+            string rankVal = "F";
+
+            if (percentHit > 95)
             {
-                startPlaying = true;
-                noteScroller.hasStarted = true;
-
-                audioSource.Play();
+                rankVal = "S";
             }
-        }
-        else
-        {
-            if(!audioSource.isPlaying && !resultsScreen.activeInHierarchy && !isPaused)
+            else if (percentHit > 85)
             {
-                resultsScreen.SetActive(true);
-
-                normalText.text = normalHits.ToString();
-                goodText.text = goodHits.ToString();
-                perfectText.text = perfectHits.ToString();
-                missText.text = missedHits.ToString();
-
-                float totalHit = normalHits + goodHits + perfectHits;
-                float percentHit = (totalHit / totalNotes) * 100f;
-
-                percentHitText.text = percentHit.ToString("F1") + "%";
-
-                string rankVal = "F";
-
-                if (percentHit > 95)
-                {
-                    rankVal = "S";
-                }
-                else if (percentHit > 85)
-                {
-                    rankVal = "A";
-                }
-                else if (percentHit > 70)
-                {
-                    rankVal = "B";
-                }
-                else if (percentHit > 55)
-                {
-                    rankVal = "C";
-                }
-                else if (percentHit > 40)
-                {
-                    rankVal = "D";
-                }
-                else
-                {
-                    rankVal = "F";
-                }
-
-                rankText.text = rankVal;
-
-                finalScoreText.text = currentScore.ToString();
+                rankVal = "A";
             }
+            else if (percentHit > 70)
+            {
+                rankVal = "B";
+            }
+            else if (percentHit > 55)
+            {
+                rankVal = "C";
+            }
+            else if (percentHit > 40)
+            {
+                rankVal = "D";
+            }
+            else
+            {
+                rankVal = "F";
+            }
+
+            rankText.text = rankVal;
+
+            finalScoreText.text = currentScore.ToString();
         }
 
         if (Input.GetKeyDown(keyToPress) && !isPaused)
