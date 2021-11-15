@@ -5,6 +5,24 @@ using UnityEngine.SceneManagement;
 
 public class SceneController : MonoBehaviour
 {
+    string sceneName;
+
+    void Start()
+    {
+        sceneName = SceneManager.GetActiveScene().name;
+    }
+
+    void Update()
+    {
+        if (sceneName == "Title")
+        {
+            if (Input.anyKey)
+            {
+                SceneManager.LoadScene(1);
+            }
+        }
+    }
+
     public void LoadMainMenu()
     {
         SceneManager.LoadScene(1);
