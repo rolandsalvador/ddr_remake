@@ -20,6 +20,11 @@ public class SceneController : MonoBehaviour
         SceneManager.LoadScene(3);
     }
 
+    public void CreditsMenu()
+    {
+        SceneManager.LoadScene(4);
+    }
+
     public void QuitGame()
     {
 #if (UNITY_EDITOR)
