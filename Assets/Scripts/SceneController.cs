@@ -15,6 +15,11 @@ public class SceneController : MonoBehaviour
         SceneManager.LoadScene(1);
     }
 
+    public void HelpMenu()
+    {
+        SceneManager.LoadScene(2);
+    }
+
     public void QuitGame()
     {
 #if (UNITY_EDITOR)
