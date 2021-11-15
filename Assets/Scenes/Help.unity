@@ -579,7 +579,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "Dance2 Circumvolution is a single-player rhythm game where the player
+  m_Text: "Dance^2 Circumvolution is a single-player rhythm game where the player
     must press the\r corresponding arrow key at the correct timing. Beware, if the
     player\r misses too many notes or is off beat for too long, they will fail the
     stage!\n\nThe player must try their best to stay on beat and not miss too many

@@ -1,0 +1,20 @@
+DANCE^2 CIRCUMVOLUTION
+
+----- How to Play -----
+Dance^2 Circumvolution is a single-player rhythm game where the player must press the
+corresponding arrow key at the correct timing. Beware, if the player
+misses too many notes or is off beat for too long, they will fail the stage!
+
+The player must try their best to stay on beat and not miss too many notes. The window for
+error depends on the difficulty of the current stage. The better your timing, the higher your
+score. The more notes in a row you hit, the higher your multiplier, and the more you score.
+
+----- Controls -----
+LEFT ARROW: Left Arrow
+DOWN ARROW: Down Arrow
+UP ARROW: Up Arrow
+RIGHT ARROW: Right Arrow
+
+LEFT MOUSE BUTTON: Select
+
+ESCAPE: Pause Game
