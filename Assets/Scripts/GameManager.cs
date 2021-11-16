@@ -69,6 +69,8 @@ public class GameManager : MonoBehaviour
     {
         if ((!audioSource.isPlaying && !resultsScreen.activeInHierarchy && !isPaused) ^ (healthBarController.healthAmount <= 0))
         {
+            Time.timeScale = 0f;
+            audioSource.Pause();
             resultsScreen.SetActive(true);
 
             normalText.text = normalHits.ToString();
