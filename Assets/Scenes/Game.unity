@@ -1250,6 +1250,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f8c353b3b3e9b6140a4b75d5a21c77f3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  healthRegenAmount: 0
 --- !u!1 &529752852
 GameObject:
   m_ObjectHideFlags: 0
@@ -2120,6 +2121,7 @@ MonoBehaviour:
   rankText: {fileID: 1095992599}
   finalScoreText: {fileID: 225628929}
   keyToPress: 27
+  health: {fileID: 353684745}
 --- !u!4 &977626373
 Transform:
   m_ObjectHideFlags: 0

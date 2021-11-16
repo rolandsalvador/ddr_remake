@@ -40,10 +40,15 @@ public class GameManager : MonoBehaviour
 
     public KeyCode keyToPress;
 
+    public GameObject health;
+    private HealthBarController healthBarController;
+
     // Start is called before the first frame update
     void Start()
     {
         instance = this;
+
+        healthBarController = health.GetComponent<HealthBarController>();
 
         noteScroller.hasStarted = true;
 
@@ -162,6 +167,8 @@ public class GameManager : MonoBehaviour
     public void NoteMissed()
     {
         Debug.Log("Note was missed.");
+
+        healthBarController.healthAmount -= 10;
 
         currentMultiplier = 1;
         multiplierTracker = 0;

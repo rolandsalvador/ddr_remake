@@ -5,51 +5,27 @@ using UnityEngine.UI;
 
 public class HealthBarController : MonoBehaviour
 {
-    private Health health;
     private Image barImage;
 
+    public const int HEALTH_MAX = 100;
+
+    public float healthAmount;
+    public float healthRegenAmount;
+
     // Start is called before the first frame update
-    private void Awake()
+    void Awake()
     {
         barImage = transform.Find("Bar").GetComponent<Image>();
 
-        health = new Health();
+        healthAmount = 100;
+        healthRegenAmount = 5f;
     }
 
-    private void Update()
+    // Update is called once per frame
+    void Update()
     {
-        health.Update();
+        healthAmount += healthRegenAmount * Time.deltaTime;
 
-        barImage.fillAmount = health.GetHealthNormalized();
-    }
-
-    public class Health
-    {
-        public const int HEALTH_MAX = 100;
-
-        private float healthAmount;
-        private float healthRegenAmount;
-
-        public Health()
-        {
-            healthAmount = 100;
-            healthRegenAmount = 30f;
-        }
-
-        // Update is called once per frame
-        public void Update()
-        {
-            healthAmount += healthRegenAmount * Time.deltaTime;
-
-            if (healthAmount == 0)
-            {
-                
-            }
-        }
-
-        public float GetHealthNormalized()
-        {
-            return healthAmount / HEALTH_MAX;
-        }
+        barImage.fillAmount = healthAmount / HEALTH_MAX;
     }
 }
