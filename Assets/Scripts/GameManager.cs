@@ -67,7 +67,7 @@ public class GameManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (!audioSource.isPlaying && !resultsScreen.activeInHierarchy && !isPaused)
+        if ((!audioSource.isPlaying && !resultsScreen.activeInHierarchy && !isPaused) ^ (healthBarController.healthAmount <= 0))
         {
             resultsScreen.SetActive(true);
 
@@ -168,7 +168,7 @@ public class GameManager : MonoBehaviour
     {
         Debug.Log("Note was missed.");
 
-        healthBarController.healthAmount -= 10;
+        healthBarController.healthAmount -= 20;
 
         currentMultiplier = 1;
         multiplierTracker = 0;
