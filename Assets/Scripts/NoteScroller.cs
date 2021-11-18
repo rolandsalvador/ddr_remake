@@ -8,11 +8,15 @@ public class NoteScroller : MonoBehaviour
 
     public bool hasStarted;
 
+    public GameObject leftArrow, downArrow, upArrow, rightArrow;
+
     // Start is called before the first frame update
     void Start()
     {
         noteTempo = noteTempo / 60f;
         transform.position += new Vector3(0f, noteTempo * Time.deltaTime, 0f);
+
+        Instantiate(leftArrow, new Vector3(-2.45f, -13, 0), Quaternion.identity);
     }
 
     // Update is called once per frame
@@ -20,7 +24,7 @@ public class NoteScroller : MonoBehaviour
     {
         if (hasStarted == true)
         {
-            transform.position += new Vector3(0f, noteTempo * Time.deltaTime, 0f);
+            //transform.position += new Vector3(0f, noteTempo * Time.deltaTime, 0f);
         }
     }
 }
