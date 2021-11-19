@@ -16,6 +16,6 @@ public class PrefabScroller : MonoBehaviour
     void Update()
     {
         //transform.position = Vector3.MoveTowards(transform.position, , noteTempo * Time.deltaTime);
-        transform.Translate(Vector3.up * noteTempo * Time.deltaTime);
+        transform.Translate(Vector3.up * noteTempo * Time.deltaTime * 100);
     }
 }
