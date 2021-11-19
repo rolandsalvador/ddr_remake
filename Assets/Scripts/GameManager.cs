@@ -60,8 +60,6 @@ public class GameManager : MonoBehaviour
         scoreText = GameObject.Find("ScoreValueText").GetComponent<Text>();
         multiplierText = GameObject.Find("MultiplierValueText").GetComponent<Text>();
         comboText = GameObject.Find("ComboValueText").GetComponent<Text>();
-
-        //totalNotes = FindObjectsOfType<NoteObject>().Length;
     }
 
     // Update is called once per frame
@@ -145,6 +143,8 @@ public class GameManager : MonoBehaviour
 
         currentCombo++;
         comboText.text = currentCombo.ToString();
+
+        healthBarController.healthAmount += 5;
     }
 
     public void NormalHit()
