@@ -3991,12 +3991,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7bacf32c737dd5444938e87d0691b3d8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  noteTempo: 0
   hasStarted: 0
   leftArrow: {fileID: 7883814923322418344, guid: 0a0777035bbd3ec40829c7e413c1a662, type: 3}
   downArrow: {fileID: 1696996188790812231, guid: b013dcd8703e432419efbc23696fb21d, type: 3}
   upArrow: {fileID: 5907123443431834408, guid: b85ab7817b3e87940a4e645a7f306a5a, type: 3}
   rightArrow: {fileID: 3561908342806422210, guid: d9d77cd610ff8f64c9a49acd0292aa14, type: 3}
+  prefab:
+  - {fileID: 7883814923322418344, guid: 0a0777035bbd3ec40829c7e413c1a662, type: 3}
+  - {fileID: 1696996188790812231, guid: b013dcd8703e432419efbc23696fb21d, type: 3}
+  - {fileID: 5907123443431834408, guid: b85ab7817b3e87940a4e645a7f306a5a, type: 3}
+  - {fileID: 3561908342806422210, guid: d9d77cd610ff8f64c9a49acd0292aa14, type: 3}
 --- !u!4 &1968515325
 Transform:
   m_ObjectHideFlags: 0

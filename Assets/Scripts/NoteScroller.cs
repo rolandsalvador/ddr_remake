@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Random = UnityEngine.Random;
 
 public class NoteScroller : MonoBehaviour
 {
@@ -8,20 +9,56 @@ public class NoteScroller : MonoBehaviour
 
     public GameObject leftArrow, downArrow, upArrow, rightArrow;
 
+    private float Timer;
+
+    //var random = new System.Random(); 
+    public GameObject[] prefab;
+    //public int prefabNum = Random.Next(0, 3);
+
     // Start is called before the first frame update
     void Start()
     {
-        //Instantiate(leftArrow, new Vector3(-2.45f, -13, 0), Quaternion.identity);
+        //var random = new System.Random();
+        //public int prefabNum = Random.Next(0, 3);
+
         SpawnLeftArrow();
-        SpawnDownArrow();
-        SpawnUpArrow();
-        SpawnRightArrow();
+        //SpawnDownArrow();
+        //SpawnUpArrow();
+        //SpawnRightArrow();
     }
 
     // Update is called once per frame
     void Update()
     {
-        
+        Timer -= Time.deltaTime;
+        if (Timer <= 0f)
+        {
+            int prefabNum = Random.Range(0, 3);
+            //SpawnRandomArrow();
+            switch (prefabNum)
+            {
+                case 0:
+                    SpawnLeftArrow();
+                    break;
+                case 1:
+                    SpawnDownArrow();
+                    break;
+                case 2:
+                    SpawnUpArrow();
+                    break;
+                case 3:
+                    SpawnRightArrow();
+                    break;
+                default: break;
+            }
+            Timer = 1f;
+        }
+    }
+
+    public void SpawnRandomArrow()
+    {
+        int prefabNum = Random.Range(0, 3);
+        Instantiate(prefab[prefabNum], new Vector3(-2.45f, -13, 0), Quaternion.identity);
     }
 
     public void SpawnLeftArrow()
