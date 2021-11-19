@@ -49,12 +49,6 @@ public class NoteScroller : MonoBehaviour
         }
     }
 
-    public void SpawnRandomArrow()
-    {
-        int prefabNum = Random.Range(0, 3);
-        Instantiate(prefab[prefabNum], new Vector3(-2.45f, -13, 0), Quaternion.identity);
-    }
-
     public void SpawnLeftArrow()
     {
         Instantiate(leftArrow, new Vector3(-2.45f, -13, 0), Quaternion.identity);

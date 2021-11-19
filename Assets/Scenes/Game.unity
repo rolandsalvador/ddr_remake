@@ -1015,7 +1015,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   healthAmount: 0
-  healthRegenAmount: 0
 --- !u!1 &529752852
 GameObject:
   m_ObjectHideFlags: 0

@@ -24,6 +24,7 @@ public class NoteObject : MonoBehaviour
             if(canBePressed)
             {
                 gameObject.SetActive(false);
+                Destroy(gameObject);
 
                 if(Mathf.Abs(transform.position.y) > 0.25)
                 {
@@ -44,6 +45,13 @@ public class NoteObject : MonoBehaviour
                     Instantiate(perfectEffect, transform.position, perfectEffect.transform.rotation);
                 }
             }
+        }
+
+        if ((transform.position.y) >= 2f)
+        {
+            GameManager.instance.NoteMissed();
+            gameObject.SetActive(false);
+            Destroy(gameObject);
         }
     }
 
