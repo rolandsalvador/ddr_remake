@@ -170,7 +170,7 @@ public class GameManager : MonoBehaviour
 
     public void NoteMissed()
     {
-        Debug.Log("Note was missed.");
+        //Debug.Log("Note was missed.");
 
         healthBarController.healthAmount -= 20;
 
@@ -190,5 +190,10 @@ public class GameManager : MonoBehaviour
         audioSource.Play();
         pauseScreen.SetActive(false);
         isPaused = false;
+    }
+
+    void OnDestroy()
+    {
+        Time.timeScale = 1f;
     }
 }
