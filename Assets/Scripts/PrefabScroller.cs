@@ -15,7 +15,6 @@ public class PrefabScroller : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        //transform.position = Vector3.MoveTowards(transform.position, , noteTempo * Time.deltaTime);
         transform.Translate(Vector3.up * noteTempo * Time.deltaTime);
     }
 }

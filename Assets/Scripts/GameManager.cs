@@ -61,12 +61,14 @@ public class GameManager : MonoBehaviour
         multiplierText = GameObject.Find("MultiplierValueText").GetComponent<Text>();
         comboText = GameObject.Find("ComboValueText").GetComponent<Text>();
 
-        totalNotes = FindObjectsOfType<NoteObject>().Length;
+        //totalNotes = FindObjectsOfType<NoteObject>().Length;
     }
 
     // Update is called once per frame
     void Update()
     {
+        totalNotes = noteScroller.numNotes;
+
         if ((!audioSource.isPlaying && !resultsScreen.activeInHierarchy && !isPaused) ^ (healthBarController.healthAmount <= 0))
         {
             Time.timeScale = 0f;

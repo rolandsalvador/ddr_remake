@@ -10,6 +10,7 @@ public class HealthBarController : MonoBehaviour
     public const int HEALTH_MAX = 100;
 
     public float healthAmount;
+    //public float healthAmount = Mathf.Clamp(100f, 0f, 100f);
     public float healthRegenAmount;
 
     // Start is called before the first frame update
@@ -17,7 +18,8 @@ public class HealthBarController : MonoBehaviour
     {
         barImage = transform.Find("Bar").GetComponent<Image>();
 
-        healthAmount = 100;
+        //healthAmount = 100;
+        healthAmount = Mathf.Clamp(healthAmount, 0f, 100f);
         healthRegenAmount = 5f;
     }
 

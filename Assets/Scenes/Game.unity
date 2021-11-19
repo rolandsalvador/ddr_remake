@@ -3992,6 +3992,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   hasStarted: 0
+  numNotes: 0
   leftArrow: {fileID: 7883814923322418344, guid: 0a0777035bbd3ec40829c7e413c1a662, type: 3}
   downArrow: {fileID: 1696996188790812231, guid: b013dcd8703e432419efbc23696fb21d, type: 3}
   upArrow: {fileID: 5907123443431834408, guid: b85ab7817b3e87940a4e645a7f306a5a, type: 3}

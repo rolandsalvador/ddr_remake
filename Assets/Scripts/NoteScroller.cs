@@ -7,24 +7,18 @@ public class NoteScroller : MonoBehaviour
 {
     public bool hasStarted;
 
+    public float numNotes;
+
     public GameObject leftArrow, downArrow, upArrow, rightArrow;
 
     private float Timer;
 
-    //var random = new System.Random(); 
     public GameObject[] prefab;
-    //public int prefabNum = Random.Next(0, 3);
 
     // Start is called before the first frame update
     void Start()
     {
-        //var random = new System.Random();
-        //public int prefabNum = Random.Next(0, 3);
 
-        SpawnLeftArrow();
-        //SpawnDownArrow();
-        //SpawnUpArrow();
-        //SpawnRightArrow();
     }
 
     // Update is called once per frame
@@ -34,7 +28,6 @@ public class NoteScroller : MonoBehaviour
         if (Timer <= 0f)
         {
             int prefabNum = Random.Range(0, 3);
-            //SpawnRandomArrow();
             switch (prefabNum)
             {
                 case 0:
@@ -52,6 +45,7 @@ public class NoteScroller : MonoBehaviour
                 default: break;
             }
             Timer = 1f;
+            numNotes++;
         }
     }
 
