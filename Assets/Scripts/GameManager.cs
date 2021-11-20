@@ -28,6 +28,8 @@ public class GameManager : MonoBehaviour
     public Text multiplierText;
     public Text comboText;
 
+    public Text playerText;
+
     private float totalNotes;
     private float normalHits;
     private float goodHits;
@@ -49,6 +51,9 @@ public class GameManager : MonoBehaviour
         instance = this;
 
         healthBarController = health.GetComponent<HealthBarController>();
+
+        playerText = GameObject.Find("PlayerText").GetComponent<Text>();
+        updatePlayer();
 
         noteScroller.hasStarted = true;
 
@@ -195,5 +200,32 @@ public class GameManager : MonoBehaviour
     void OnDestroy()
     {
         Time.timeScale = 1f;
+    }
+
+    void updatePlayer()
+    {
+        playerText.text = PlayerData.instance.characterName;
+
+        playerText.color = Color.red;
+
+        if (PlayerData.instance.characterColor == "Red")
+        {
+            playerText.color = Color.red;
+        }
+
+        if (PlayerData.instance.characterColor == "Blue")
+        {
+            playerText.color = Color.blue;
+        }
+
+        if (PlayerData.instance.characterColor == "Green")
+        {
+            playerText.color = Color.green;
+        }
+
+        if (PlayerData.instance.characterColor == "Yellow")
+        {
+            playerText.color = Color.yellow;
+        }
     }
 }
