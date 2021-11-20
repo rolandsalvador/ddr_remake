@@ -28,19 +28,34 @@ public class SceneController : MonoBehaviour
         SceneManager.LoadScene(1);
     }
 
-    public void PlayGame()
+    public void StageSelect()
     {
         SceneManager.LoadScene(2);
     }
 
-    public void HelpMenu()
+    public void GameEasy()
     {
         SceneManager.LoadScene(3);
     }
 
-    public void CreditsMenu()
+    public void GameMedium()
     {
         SceneManager.LoadScene(4);
+    }
+
+    public void GameHard()
+    {
+        SceneManager.LoadScene(5);
+    }
+
+    public void HelpMenu()
+    {
+        SceneManager.LoadScene(6);
+    }
+
+    public void CreditsMenu()
+    {
+        SceneManager.LoadScene(7);
     }
 
     public void QuitGame()
@@ -48,7 +63,7 @@ public class SceneController : MonoBehaviour
 #if (UNITY_EDITOR)
         UnityEditor.EditorApplication.isPlaying = false;
 #else
-        Debug.Log("Exited the game.");
+        //Debug.Log("Exited the game.");
         Application.Quit();
 
 #endif
