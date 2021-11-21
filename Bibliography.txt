@@ -1,0 +1,65 @@
+BIBLIOGRAPHY
+
+Made by me (Roland Salvador):
+Sprites:
+Arrow.png
+Arrow_Down.png
+Arrow_Left.png
+Arrow_Right.png
+Arrow_Up.png
+Button_Down.png
+Button_Down_Pressed.png
+Button_Left.png
+Button_Left_Pressed.png
+Button_Right.png
+Button_Right_Pressed.png
+Button_Up.png
+Button_Up_Pressed.png
+Game controls.png
+Gamecompanylogo.png
+whitePixel.png
+
+Made by Rizwan Ashraf (Unity Asset Store):
+Audio: https://assetstore.unity.com/packages/audio/music/free-music-tracks-for-games-156413
+StreetLove.wav
+Stupid_Dancer.wav
+Zephyr.wav
+
+Made by mixkit.co (external website)
+Audio: https://mixkit.co/free-sound-effects/game/
+mixkit-player-jumping-in-a-video-game-2043.wav
+
+Made by geralt on pixabay.com (external website)
+Background: https://pixabay.com/illustrations/cheers-pleasure-poor-community-204742/
+cheers-gedaf36996_1920.jpg
+
+Made by gamesplusjames on youtube.com (external website)
+Sprites: https://www.dropbox.com/s/o7v67gjjohwx999/RhythmTutorial.unitypackage?dl=0
+effects.png
+Code Tutorial Videos: 
+https://youtu.be/cZzf1FQQFA0
+https://youtu.be/PMfhS-kEvc0
+https://youtu.be/dV9rdTlMHxs
+https://youtu.be/Oi0tT7QnFhs
+https://youtu.be/Usuh7WUAPbg
+
+The code for scripts ButtonController, EffectObject, NoteObject, and many
+parts of GameManager are from gamesplusjames tutorials. 
+All the code that was taken or inspired from the tutorials are in the videos themselves.
+Hitting the notes and configuring their hitboxes, playing the music and missing notes,
+calculating and displaying score and their multipliers, timing hits for better scores,
+and showing results and ranking are the prominent aspects of the game that were taken
+or inspired by the tutorial.
+
+However, everything else, such as the UI, SceneController, PrefabScroller, PlayerData,
+HealthBarController are things that I have created myself and figured out. This includes
+the pause menu, stage select, and main menu and title screens.
+
+It is worth mentioning that instead of gamesplusjames way of displaying and holding notes
+was not used. Instead of putting all notes directly onto the scene, I instead configured
+my own way of spawning note/arrow prefabs randomly every 1 second.
+
+Please let me know if I am required to cite the exact code that I used from gamesplusjames
+tutorials, as I am not deliberately trying to pass off most of the game's mechanics as
+my own.
+

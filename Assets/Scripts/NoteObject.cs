@@ -47,12 +47,13 @@ public class NoteObject : MonoBehaviour
             }
         }
 
-        if ((transform.position.y) >= 2f)
+        // If this code is uncommented, missed notes will get destroyed but misses will be counted twice
+        /*if ((transform.position.y) >= 2f)
         {
             GameManager.instance.NoteMissed();
             gameObject.SetActive(false);
             Destroy(gameObject);
-        }
+        }*/
     }
 
     private void OnTriggerEnter2D(Collider2D other)
