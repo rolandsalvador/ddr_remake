@@ -1757,6 +1757,7 @@ MonoBehaviour:
   scoreText: {fileID: 0}
   multiplierText: {fileID: 0}
   comboText: {fileID: 0}
+  playerText: {fileID: 0}
   resultsScreen: {fileID: 656190549}
   pauseScreen: {fileID: 228186501}
   percentHitText: {fileID: 1041910956}
@@ -3124,7 +3125,7 @@ Camera:
   m_Enabled: 1
   serializedVersion: 2
   m_ClearFlags: 1
-  m_BackGroundColor: {r: 0.3773585, g: 0.010198878, b: 0, a: 0}
+  m_BackGroundColor: {r: 0.22745098, g: 0.22745098, b: 0.22745098, a: 0}
   m_projectionMatrixMode: 1
   m_GateFitMode: 2
   m_FOVAxisMode: 0
