@@ -206,7 +206,12 @@ public class GameManager : MonoBehaviour
     {
         playerText.text = PlayerData.instance.characterName;
 
-        playerText.color = Color.red;
+        if (playerText.text == "")
+        {
+            playerText.text = "Player";
+        }
+
+        playerText.color = Color.white;
 
         if (PlayerData.instance.characterColor == "Red")
         {
