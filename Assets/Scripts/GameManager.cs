@@ -6,6 +6,7 @@ using UnityEngine.UI;
 public class GameManager : MonoBehaviour
 {
     public AudioSource audioSource;
+    public AudioSource hitSound;
 
     public bool isPaused = false;
 
@@ -131,6 +132,7 @@ public class GameManager : MonoBehaviour
 
     public void NoteHit()
     {
+        hitSound.Play();
 
         if (currentMultiplier - 1 < multiplierThresholds.Length)
         {
