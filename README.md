@@ -1,4 +1,4 @@
-# sdsu_cs583_2dgame
+# Dance Dance Revolution Remake
 
 Hello!
 
