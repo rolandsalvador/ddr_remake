@@ -11,10 +11,28 @@ I always used to play, I wanted to remake it from scratch myself.
 
 This repository was originally on Rijeka, and I just imported it to GitHub so that I could let people view it publicly.
 
-If you are interested in trying the game out, the "Releases" folder has the final working version.
+If you are interested in trying the game out, you can download the .zip file <a href="https://drive.google.com/file/d/1z0CcS2VqZgclgOJDiHQlucON-97N5Z6L/view?usp=sharing">here</a>!
 
 Thank you for taking a look!
+<br />
 
-Roland Salvador
-San Diego State University
-rsalvador2999@sdsu.edu
+<h3>Welcome Screen</h3>
+<img src="https://i.imgur.com/aqWzBHP.png"/>
+
+<h3>Main Menu</h3>
+<img src="https://i.imgur.com/KIFo3I3.png"/>
+
+<h3>How to Play</h3>
+<img src="https://i.imgur.com/MoeWOB2.png"/>
+
+<h3>Stage Select</h3>
+<img src="https://i.imgur.com/AgAHbaB.png"/>
+
+<h3>Gameplay</h3>
+<img src="https://i.imgur.com/qYYWFIi.png"/>
+
+<h3>Results Menu</h3>
+<img src="https://i.imgur.com/5Tz2qpg.png"/>
+
+<h3>Credits</h3>
+<img src="https://i.imgur.com/hHIWDDE.png"/>
